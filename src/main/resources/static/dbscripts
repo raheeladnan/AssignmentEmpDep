@@ -1,0 +1,20 @@
+create database assignment_emp_dep;
+
+
+CREATE TABLE assignment_emp_dep.department (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL
+);
+
+CREATE TABLE assignment_emp_dep.employee (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nameemployee VARCHAR(100),
+    age INT,
+    is_active BOOLEAN,
+    role ENUM('MANAGER', 'EMPLOYEE', 'ADMINISTRATOR'),
+    department_id INT,
+    FOREIGN KEY (department_id) REFERENCES department(id)
+);
+
+
+insert into assignment_emp_dep.department (id, name) values(1,"CADM");
